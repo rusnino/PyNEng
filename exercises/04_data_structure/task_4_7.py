@@ -9,3 +9,5 @@
 '''
 
 MAC = 'AAAA:BBBB:CCCC'
+
+print( bin ( int ( ''.join ( MAC.split ( ':' ) ) , 16) ) ) 
