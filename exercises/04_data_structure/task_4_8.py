@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 4.8
@@ -18,4 +19,10 @@
 
 '''
 
-IP = '192.168.3.1'
+IP = '10.168.3.1'
+IP_TEMPLATE = '''
+{0:<10}{1:<10}{2:<10}{3:<10}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}
+'''
+
+print(IP_TEMPLATE.format(int(IP.split('.')[0]), int(IP.split('.')[1]), int(IP.split('.')[2]), int(IP.split('.')[3])))
