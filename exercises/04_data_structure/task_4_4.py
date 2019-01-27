@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 4.4
@@ -14,3 +15,8 @@
 
 command1 = 'switchport trunk allowed vlan 1,3,10,20,30,100'
 command2 = 'switchport trunk allowed vlan 1,3,100,200,300'
+list_strings_vlan1 = command1.split()[-1].split(',')
+list_strings_vlan2 = command2.split()[-1].split(',')
+list_int_vlan1 = [int(vlan) for vlan in list_strings_vlan1]
+list_int_vlan2 = [int(vlan) for vlan in list_strings_vlan2]
+print(list(set(list_int_vlan1) & set(list_int_vlan2)))
