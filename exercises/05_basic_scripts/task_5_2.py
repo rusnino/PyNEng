@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 5.2
@@ -47,3 +48,7 @@ london_co = {
         'routing': True
     }
 }
+
+router_name = input("Enter device name: ")
+
+print(london_co[router_name])

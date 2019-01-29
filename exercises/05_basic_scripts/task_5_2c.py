@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 5.2c
@@ -48,3 +49,9 @@ london_co = {
         'routing': True
     }
 }
+
+router_name = input("Enter device name: ")
+parameters_list = ','.join(list(london_co[router_name].keys()))
+parameter = input("Enter parameter name ({}): ".format(parameters_list))
+
+print(london_co[router_name].get(parameter, 'Такого параметра нет'))
