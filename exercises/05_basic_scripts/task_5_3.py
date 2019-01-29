@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 5.3
@@ -49,12 +50,23 @@ switchport trunk allowed vlan 2,3,4,5
 '''
 
 access_template = [
-    'switchport mode access', 'switchport access vlan {}',
-    'switchport nonegotiate', 'spanning-tree portfast',
-    'spanning-tree bpduguard enable'
+    ' switchport mode access', ' switchport access vlan {}',
+    ' switchport nonegotiate', ' spanning-tree portfast',
+    ' spanning-tree bpduguard enable'
 ]
 
 trunk_template = [
-    'switchport trunk encapsulation dot1q', 'switchport mode trunk',
-    'switchport trunk allowed vlan {}'
+    ' switchport trunk encapsulation dot1q', ' switchport mode trunk',
+    ' switchport trunk allowed vlan {}'
 ]
+
+access_template = '\n'.join(access_template)
+trunk_template = '\n'.join(trunk_template)
+dct = {'access': access_template, 'trunk': trunk_template}
+
+mode = input("Enter interface mode (access/trunk): ")
+interface = input("Enter interface type and number: ")
+vlans = input("Enter vlan(s): ")
+
+print('interface {}\n'.format(interface) + dct['{}'.format(mode)].format(vlans))
+
