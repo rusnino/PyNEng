@@ -60,13 +60,16 @@ trunk_template = [
     ' switchport trunk allowed vlan {}'
 ]
 
+#Reformat templates to string type
 access_template = '\n'.join(access_template)
 trunk_template = '\n'.join(trunk_template)
+
+#Create dictionary to switch between templates
 dct = {'access': access_template, 'trunk': trunk_template}
 
+#Input variables
 mode = input("Enter interface mode (access/trunk): ")
 interface = input("Enter interface type and number: ")
 vlans = input("Enter vlan(s): ")
 
 print('interface {}\n'.format(interface) + dct['{}'.format(mode)].format(vlans))
-
