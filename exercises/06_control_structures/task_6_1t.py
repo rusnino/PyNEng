@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 #!/usr/local/bin/python3
+=======
+>>>>>>> 83a8e046e2ba5d2218882f96bc1917053a5b621d
 # -*- coding: utf-8 -*-
 '''
 Задание 6.1
@@ -20,9 +23,12 @@ D: 224-239
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+<<<<<<< HEAD
 ip_address = input('Enter IP address: ')
 if int(ip_address.split('.')[0]) >= 1 and int(ip_address.split('.')[0]) <= 127:
 	print('Class A unicast')
 
 
 
+=======
+>>>>>>> 83a8e046e2ba5d2218882f96bc1917053a5b621d

@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 5.4
@@ -12,8 +13,25 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+from sys import argv
 
 num_list = [10, 2, 30, 100, 10, 50, 11, 30, 15, 7]
 word_list = [
     'python', 'ruby', 'perl', 'ruby', 'perl', 'python', 'ruby', 'perl'
 ]
+
+#num = int(input('Enter the number: '))
+#word = input('Enter the word: ')
+#num = int('15')
+#word = 'perl'
+num = int(argv[1])
+word  = argv[2]
+
+
+num_list = [num_list.pop(-1) for i in range(len(num_list))]
+word_list = [word_list.pop(-1) for i in range(len(word_list))]
+
+num_index = len(num_list) - num_list.index(num) -1
+word_index = len(word_list) - word_list.index(word) -1
+print('Index of last entry of number {} is: '.format(num) + str(num_index))
+print('Index of last entry of word {} is: '.format(word) + str(word_index))
