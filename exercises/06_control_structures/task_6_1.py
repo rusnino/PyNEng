@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 '''
 Задание 6.1
@@ -19,3 +20,19 @@ D: 224-239
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+ip_address = input('Enter IP-address: ')
+ip_address_num_list = ip_address.split('.')
+for i in range (4):
+	ip_address_num_list[i] = int(ip_address_num_list[i])
+
+
+if ip_address_num_list[0] >=1 and ip_address_num_list[0] <=223:
+	print('unicast')
+elif ip_address_num_list[0] >=224 and ip_address_num_list[0] <=239:
+	print('multicast')
+elif ip_address_num_list[0] == 255 and ip_address_num_list[1] == 255 and ip_address_num_list[2] == 255 and ip_address_num_list[3] == 255:
+	print('local broadcast')
+elif ip_address_num_list[0] == 0 and ip_address_num_list[1] == 0 and ip_address_num_list[2] == 0 and ip_address_num_list[3] == 0:
+	print('unassigned')
+else:
+    print('unused')
