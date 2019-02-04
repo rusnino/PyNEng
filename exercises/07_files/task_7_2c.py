@@ -17,3 +17,20 @@
 '''
 
 ignore = ['duplex', 'alias', 'Current configuration']
+
+from sys import argv
+
+config_cleared = []
+
+with open(argv[1], 'r') as f:
+    for line in f:
+        ignore_flag = False
+        for word in ignore:
+            if word in line:
+                ignore_flag = ignore_flag or True
+        if not ignore_flag:
+            config_cleared.append(line)
+
+#print(config_cleared)
+with open(argv[2], 'w') as f:
+    f.writelines(config_cleared)
