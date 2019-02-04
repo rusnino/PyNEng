@@ -19,7 +19,3 @@ with open(argv[1], 'r') as f:
         if not line.startswith('!'):
             print(line.rstrip())
         #elif 
-
-
-
-
