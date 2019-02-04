@@ -27,7 +27,6 @@ word_list = [
 num = int(argv[1])
 word  = argv[2]
 
-
 num_list = [num_list.pop(-1) for i in range(len(num_list))]
 word_list = [word_list.pop(-1) for i in range(len(word_list))]
 
