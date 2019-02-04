@@ -26,4 +26,12 @@ with open(argv[1], 'r') as f:
 
             if not ignore_flag:
             	print(line.rstrip())
-        
+'''
+#natenka version:
+
+with open(argv[1], 'r') as f:
+    for line in f:
+        ignore_line = True in [word in line for word in ignore]
+        if not line.startswith('!') and not ignore_line:
+            print(line.rstrip())
+'''

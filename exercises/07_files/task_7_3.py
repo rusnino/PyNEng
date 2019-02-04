@@ -18,3 +18,11 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
+
+read_file = []
+with open('CAM_table.txt', 'r') as f:
+    for line in f:
+        read_file.append(line.rstrip())
+table_file = read_file[6:]
+
+print(table_file)
