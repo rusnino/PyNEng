@@ -26,9 +26,5 @@ with open('CAM_table.txt', 'r') as f:
         if count >= 6:
         	table.append(line.rstrip().split())
         count += 1
-
-# print(table)
-# for line in table:
-    # print(template.format(line[0], line[1], line[3]))
 for vlan, mac, _, intf in table:
-	print(vlan, mac, intf)
+	print(template.format(vlan, mac, intf))

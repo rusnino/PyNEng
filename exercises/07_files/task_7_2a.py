@@ -40,7 +40,7 @@ with open(argv[1], 'r') as f:
 file =  argv[1]
 ignored = tuple(ignore)
 
-with open(file, 'r') as f:
+with open('config_sw1.txt', 'r') as f:
         for line in f:
                 if not line.startswith('!') and not line.lstrip().startswith(ignored):
                         print(line.rstrip())
