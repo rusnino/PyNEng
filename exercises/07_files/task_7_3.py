@@ -18,11 +18,17 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
-
-read_file = []
+template = " {0:<7}{1:<17}{2:<}"
+count = 0
+table = []
 with open('CAM_table.txt', 'r') as f:
     for line in f:
-        read_file.append(line.rstrip())
-table_file = read_file[6:]
+        if count >= 6:
+        	table.append(line.rstrip().split())
+        count += 1
 
-print(table_file)
+# print(table)
+# for line in table:
+    # print(template.format(line[0], line[1], line[3]))
+for vlan, mac, _, intf in table:
+	print(vlan, mac, intf)

@@ -21,11 +21,10 @@ with open(argv[1], 'r') as f:
         if not line.startswith('!'):
             ignore_flag = False
             for word in ignore:
-            	if word in line:
-            		ignore_flag = ignore_flag or True
-
+                if word in line:
+                    ignore_flag = ignore_flag or True
             if not ignore_flag:
-            	print(line.rstrip())
+                print(line.rstrip())
 '''
 #natenka version:
 
@@ -34,4 +33,15 @@ with open(argv[1], 'r') as f:
         ignore_line = True in [word in line for word in ignore]
         if not line.startswith('!') and not ignore_line:
             print(line.rstrip())
+'''
+
+#grossminer version
+'''
+file =  argv[1]
+ignored = tuple(ignore)
+
+with open(file, 'r') as f:
+        for line in f:
+                if not line.startswith('!') and not line.lstrip().startswith(ignored):
+                        print(line.rstrip())
 '''
