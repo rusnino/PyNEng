@@ -34,4 +34,4 @@ output_template = '''
 '''
 
 print('Network:' + output_template.format(int(subnet.split('.')[0]), int(subnet.split('.')[1]), int(subnet.split('.')[2]), int(subnet.split('.')[3])))
-print('Mask:' + '\n/' + mask + output_template.format(int(mask_bin_string[0:8],2), int(mask_bin_string[8:16],2), int(mask_bin_string[16:24],2), int(mask_bin_string[24:32],2)))
+print('Mask: ' + '\n/' + mask + output_template.format(int(mask_bin_string[0:8],2), int(mask_bin_string[8:16],2), int(mask_bin_string[16:24],2), int(mask_bin_string[24:32],2)))
