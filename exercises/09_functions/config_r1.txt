@@ -102,7 +102,7 @@ router bgp 100
  neighbor 10.2.2.2 update-source Loopback0
  neighbor 10.2.2.2 next-hop-self
  neighbor 10.4.4.4 remote-as 40
- !
+!
  address-family vpnv4
   neighbor 10.2.2.2 activate
   neighbor 10.2.2.2 send-community both

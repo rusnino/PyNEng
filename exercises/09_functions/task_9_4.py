@@ -39,16 +39,19 @@ def ignore_command(command, ignore):
 
 def generate_config_dict(filename):
     '''
-
-    '''
-    config_dict = {}
+    В функции проверяется 2 условия, если строка является командой верхнего уровня(не начинается с пробела),
+    то нужно сохранить ее в переменную keyword и "инициализировать" item в словаре config_dict с этим ключом.
+    При следующей итерации(прочитывании новой строки), если всё таки она является командой второго уровня,
+    то ее нужно дописать в список - значение словаря с ключом из предыдущей итерации.
+    ''' 
     with open(filename, 'r') as f:
+        config_dict = {}
         for line in f:
             if not line.startswith('!') and not ignore_command(line, ignore) and not line.startswith(' '):
                 keyword = line.rstrip()
+                config_dict[keyword] = []
             elif not line.startswith('!') and not ignore_command(line, ignore):
-                config_dict[keyword].append(line.rstrip())
-
+                config_dict[keyword].append(line.strip())
     return(config_dict)
 
 config_dict = generate_config_dict('config_sw1.txt')
