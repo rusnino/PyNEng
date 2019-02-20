@@ -29,4 +29,3 @@ def strip_list(output_string):
     if not output_string[-1]:
         output_string.pop(-1)
     return(output_string)
-
