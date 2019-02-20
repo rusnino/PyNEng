@@ -7,15 +7,6 @@
 #
 # --------------------------
 
-def parse_cdp_neighbors(output_string):
-    dictinored_tuples = {}
-    local_host = output_string[0].split('>')[0]
-
-    for string in output_string[6:]:
-        left_tuple = (local_host, string.split()[1]+string.split()[2])
-        right_tuple = (string.split()[0], string.split()[-2]+string.split()[-1])
-        dictinored_tuples[left_tuple] = right_tuple
-    return(dictinored_tuples)
 
 def read_file_to_string(filename):
     output_string = []
@@ -29,3 +20,14 @@ def strip_list(output_string):
     if not output_string[-1]:
         output_string.pop(-1)
     return(output_string)
+
+def parse_cdp_neighbors(output_string):
+    dictinored_tuples = {}
+    local_host = output_string[0].split('>')[0]
+    for string in output_string[6:]:
+        left_tuple = (local_host, string.split()[1]+string.split()[2])
+        right_tuple = (string.split()[0], string.split()[-2]+string.split()[-1])
+        dictinored_tuples[left_tuple] = right_tuple
+    return(dictinored_tuples)
+
+
