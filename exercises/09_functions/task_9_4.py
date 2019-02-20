@@ -55,3 +55,4 @@ def generate_config_dict(filename):
     return(config_dict)
 
 config_dict = generate_config_dict('config_sw1.txt')
+print(config_dict)
