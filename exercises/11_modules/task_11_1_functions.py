@@ -23,10 +23,9 @@ def read_file_to_string(filename):
         for line in f:
             output_string.append(line)
         output_string = ''.join(output_string)
-    output_string = clear_output_string_ends_with_empty(output_string)
     return(output_string)
 
-def clear_output_string_ends_with_empty(output_string):
+def strip_list(output_string):
     if not output_string[-1]:
         output_string.pop(-1)
     return(output_string)
