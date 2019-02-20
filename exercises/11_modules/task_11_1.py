@@ -27,3 +27,23 @@ R6           Fa 0/2          143           R S I           2811       Fa 0/0
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+
+def parse_cdp_neighbors(output_string):
+    print()
+
+    return(dict_links)
+
+def read_file_to_string(filename):
+    output_string = []
+    with open(filename, 'r') as f:
+        for line in f:
+            output_string.append(line)
+        output_string = ''.join(output_string)
+    return(output_string)
+
+output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt').split('\n')
+
+local_host = output_string[0].split('>')[0]
+for string in output_string[6:]:
+    zip(
+
