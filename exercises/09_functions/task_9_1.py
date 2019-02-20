@@ -59,7 +59,7 @@ def generate_access_config(access):
     for int_name, vlan_num in access.items():
         config_list.append(int_name)
         for string in access_template:
-          if string.endswith('vlan'):
+          if string.endswith('access vlan'):
             config_list.append(string + ' ' + str(vlan_num))
           else:
             config_list.append(string)
