@@ -31,7 +31,6 @@ from draw_network_graph import draw_topology
 
 
 if __name__ == '__main__':
-    output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt').split('\n')
-    topolgy_dict = parse_cdp_neighbors(strip_list(output_string))
-
-    draw_topology(topolgy_dict)
+    output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt')
+    #output_string = read_file_to_string('sh_cdp_n_r3.txt')
+    draw_topology(parse_cdp_neighbors(output_string))

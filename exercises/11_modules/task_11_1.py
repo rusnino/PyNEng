@@ -28,10 +28,10 @@ R6           Fa 0/2          143           R S I           2811       Fa 0/0
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
 
-from task_11_1_functions import strip_list, read_file_to_string, parse_cdp_neighbors
+from task_11_1_functions import read_file_to_string, parse_cdp_neighbors
 
 
 if __name__ == '__main__':
-    output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt').split('\n')
-    dictinored_tuples = parse_cdp_neighbors(strip_list(output_string))
-    print(dictinored_tuples)
+    output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt')
+
+    print(parse_cdp_neighbors(output_string))
