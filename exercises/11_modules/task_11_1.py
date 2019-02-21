@@ -32,6 +32,7 @@ from task_11_1_functions import read_file_to_string, parse_cdp_neighbors
 
 
 if __name__ == '__main__':
-    output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt')
+    # output_string = read_file_to_string('sw1_sh_cdp_neighbors.txt')
+    output_string = read_file_to_string('sh_cdp_n_sw1.txt')
 
     print(parse_cdp_neighbors(output_string))
