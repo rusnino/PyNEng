@@ -75,7 +75,7 @@ def ping_ip(ip_address):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         encoding='utf-8')
-    if reply.returncode == 0:bear
+    if reply.returncode == 0:
         return True
     else:
         return False
