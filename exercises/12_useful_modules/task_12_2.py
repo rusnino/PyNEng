@@ -31,7 +31,7 @@ IP-адреса могут быть в формате:
 '''
 
 import ipaddress
-import subprocess
+from task_12_1 import ping_ip
 
 def check_ip_availability(ip_addresses_list):
     '''
@@ -60,25 +60,6 @@ def convert_ip_range_to_list(ip_range):
     return ip_list
 
 
-def ping_ip(ip_address):
-    '''
-    Ping IP address and return tuple:
-    On success:
-        * True
-        * command output (stdout)
-    On failure:
-        * False
-        * error output (stderr)
-    '''
-    reply = subprocess.run(
-        ['ping', '-c', '1', '-n', '-t', '1', ip_address],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        encoding='utf-8')
-    if reply.returncode == 0:
-        return True
-    else:
-        return False
 
 def extend_ip_address_list(ip_addresses_list):
     '''
@@ -94,8 +75,10 @@ def extend_ip_address_list(ip_addresses_list):
             extended_ip_address_list.extend(convert_ip_range_to_list(string))
     return extended_ip_address_list
 
-ip_addresses_list = ['192.168.0.5-192.168.0.6', '192.168.201.1', '8.8.8.8', '3.8.8.8', '10.1.1.1-10']
-list_available, list_unavailable = check_ip_availability(extend_ip_address_list(ip_addresses_list))
 
-print('Available: ', list_available)
-print('Unavailable: ', list_unavailable)
+if __name__ == '__main__':
+    ip_addresses_list = ['192.168.0.5-192.168.0.6', '192.168.201.1', '8.8.8.8', '3.8.8.8', '10.1.1.1-10']
+    list_available, list_unavailable = check_ip_availability(extend_ip_address_list(ip_addresses_list))
+
+    print('Available: ', list_available)
+    print('Unavailable: ', list_unavailable)
