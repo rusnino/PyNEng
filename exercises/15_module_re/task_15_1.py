@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+#!/usr/local/bin/python3
+# -*- coding:
+# utf-8 -*-
 '''
 Задание 15.1
 
@@ -38,3 +40,10 @@ Loopback100                100.0.0.1       YES manual up                    up
 
 
 '''
+
+from sys import argv
+
+filename = argv[1]
+regex = argv[2]
+
+print(filename, ' ', regex)
