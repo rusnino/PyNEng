@@ -6,4 +6,4 @@
 
 * [master](https://github.com/natenka/pyneng-examples-exercises/) - все примеры и задания для Python 3.6
 * [python2.7](https://github.com/natenka/pyneng-examples-exercises/tree/python2.7) - все примеры и задания для Python 2.7
-
+3.7
